@@ -1,3 +1,7 @@
+'''
+https://www.codechef.com/SNCKQL17/problems/SNAKEEAT
+'''
+
 def binSearch(num, N):
     if num>=L[N-1]:
         if num==L[N-1]:

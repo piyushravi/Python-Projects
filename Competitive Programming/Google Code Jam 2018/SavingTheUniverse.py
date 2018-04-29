@@ -15,24 +15,24 @@ def damage(S, D, n):
     actD = 0
     ctr = 1
     res = 0
-
+    
     ctrL = []
     cL = []
-    for x in range(n):
+    for x in xrange(n):
         if S[x]=='S':
             minD += 1
             actD += ctr
         else:
             ctr *= 2
-
+            
             cL.append(x)
         ctrL.append(ctr)
-
+        
     if minD > D:
         return 'Impossible'
-    if actD<=D:
-        return res
-
+    if actD<=D:        
+        return res    
+    
     cL = cL[::-1]
     #print actD, D
     ctr = 0
@@ -46,21 +46,23 @@ def damage(S, D, n):
             actD -= ((n-1-c-ctr)*(ctrL[c]/2))
             res += n-1-c-ctr
         ctr+=1
-
+     
     return res
 
+        
+    
+    
+    
+    
+    
+        
+    
 
-
-
-
-
-
-
-
-
-for _ in range(t):
-    D, S = input().split()
+for _ in xrange(t):
+    D, S = raw_input().split()
     D = int(D)
     S = list(S)
-
-    print ("Case #"+str(_+1)+': '+str(damage(S, D, len(S))))
+    
+    print "Case #"+str(_+1)+': '+str(damage(S, D, len(S)))
+    
+    
